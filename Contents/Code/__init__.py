@@ -203,7 +203,11 @@ class Tvheadend(object):
             '/api/epg/events/grid',
             values=dict(start=0, limit=channelCount)
         )['entries']
-        return dict((channel['channelUuid'], channel) for channel in entries)
+        epg = dict()
+        for channel in entries:
+            if not channel['channelUuid'] in epg:
+                epg[channel['channelUuid']] = channel
+        return epg
 
     @staticmethod
     def fetch(path, headers=dict(), values=None):
