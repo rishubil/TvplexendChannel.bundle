@@ -104,7 +104,7 @@ def MainMenu():
 
 
 @route(PREFIX + '/{channelId}')
-def Channel(channelId, container=False):
+def Channel(channelId, container=False, includeBandwidths=0):
     channel = Dict['channels'][channelId]
     epg = Dict['epg'][channelId] if channelId in Dict['epg'] else dict()
 
@@ -213,7 +213,7 @@ class Tvheadend(object):
             headers['Authorization'] = Dict['auth']
 
         try:
-            return JSON.ObjectFromURL(url=url, headers=headers, values=values)
+            return JSON.ObjectFromURL(url=url, headers=headers, values=values, encoding='latin1')
 
         except Ex.HTTPError as e:
             Log.Error('An HTTP error occured: ' + repr(e))
