@@ -19,6 +19,12 @@
         "default":  ""
     },
     {
+        "id":       "streamProfileName",
+        "label":    "Stream Profile Name",
+        "type":     "text",
+        "default":  "pass"
+    },
+    {
         "id":       "displayChannelsNumbers",
         "label":    "Display channel numbers",
         "type":     "bool",
