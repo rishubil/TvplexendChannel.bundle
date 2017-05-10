@@ -223,7 +223,7 @@ class Tvheadend(object):
             headers['Authorization'] = Dict['auth']
 
         try:
-            return JSON.ObjectFromURL(url=url, headers=headers, values=values, encoding='latin1')
+            return JSON.ObjectFromURL(url=url, headers=headers, values=values, encoding='utf8')
 
         except Ex.HTTPError as e:
             Log.Error('An HTTP error occured: ' + repr(e))
