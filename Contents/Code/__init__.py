@@ -163,9 +163,6 @@ def Channel(channelId, container=False, **kwargs):
         items=[
             MediaObject(
                 optimized_for_streaming=True,
-                video_resolution = 1080,
-                video_codec=VideoCodec.H264,
-                audio_codec=AudioCodec.AAC,
                 container=CONTAINER,
                 parts=[
                     PartObject(
